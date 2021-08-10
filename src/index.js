@@ -22,7 +22,7 @@ app.post("/weather", (req, res) => {
       `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=30c06c817dfaf455478e39636b9e5619&units=metric`
     );
     const data = await Post.json();
-    console.log(data.main.temp);
+    // console.log(data.main.temp);
     res.render("weatherData.ejs", { data });
   };
   // res.redirect("/");

@@ -1,28 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="height: 100%">
   <%- include("bootstrap.ejs") %>
-  <body>
-  <!-- <link href="../public/style.css" rel="stylesheet" type="text/css" /> -->
+  <!-- icon -->
+  <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+    crossorigin="anonymous"
+  />
+
+  <body class="d-flex flex-column" style="width: 100%; min-height: 100vh">
+    <!-- <link href="../public/style.css" rel="stylesheet" type="text/css" /> -->
     <title>Weather app by Hari om</title>
     <!-- Navbar  -->
     <%- include("nav.ejs") %>
-    <div class="container"></div>
-    <section>
-    <div class="container" id="main">
-        <form action="/weather" method="POST" id="form">
-            <label for="city">City Name: 
-                <input type="text" name="name" id="city">
-            </label>
-            <button type="submit" class="btn btn-outline-primary">Show Weather</button>
-        </form>
-        <!-- <div class="details">
-          <div class="" id="temp">
-          <span>temp </span>
-        </div>
-          <span class=>Des: </span>
-          <span class=>con</span>
-        </div>
-    </div> -->
-  </section>
+    <div class="display-2 text-center">
+      Weather App <span><i class="fas fa-cloud-moon-rain"></i></span>
+    </div>
+    <div
+      class="
+        container
+        d-flex
+        flex-column
+        justify-content-center
+        align-items-center
+        my-auto
+        fs-3
+      "
+    >
+      <form action="/weather" method="POST" id="form" class="text-center">
+        <label for="city"
+          >City Name:
+          <input
+            type="text"
+            name="name"
+            id="city"
+            placeholder="Enter Your City Name"
+            autocomplete="off"
+            class="m-3 rounded-3"
+          />
+        </label>
+        <br />
+        <button type="submit" class="btn btn-outline-primary rounded-pill">
+          Show Weather
+        </button>
+      </form>
+    </div>
+    <!-- <footer class="text-center p-2 bg-info text-dark mt-auto">
+      <span>
+        &copy; Made with 💖 By
+        <a
+          href="https://twitter.com/Hari_om_333"
+          class="text-dark"
+          target="__blank"
+          >Hari om</a
+        >
+      </span>
+    </footer> -->
+    <%- include("footer.ejs") %>
   </body>
 </html>

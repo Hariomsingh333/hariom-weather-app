@@ -1,10 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="height: 100%">
   <%- include("bootstrap.ejs") %>
+  <!-- icon -->
+  <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+    crossorigin="anonymous"
+  />
+
   <title>Weather of: <%= data.name %></title>
   <!-- <link href="../public/style.css" rel="stylesheet" type="text/css" /> -->
-  <body class="d-flex flex-column">
-    <div class="container">
+  <body class="d-flex flex-column" style="width: 100%; min-height: 100vh">
+    <!-- <div class="container">
       <p class="display-3">City Name: <%= data.name %></p>
       <p class="display-3">temp: <%= data.main.temp %></p>
       <p class="display4 lead">des: <%= data.weather[0].description %></p>
@@ -17,6 +25,55 @@
       </div>
       <p class="display-4">wind <%= data.wind.speed%></p>
       <a href="/">home</a>
+    </div> -->
+    <header>
+      <h3
+        class="display-3 text-center m-3"
+        style="font-family: serif; letter-spacing: 0.2rem"
+      >
+        Here is your Weather Data
+      </h3>
+    </header>
+    <div
+      class="
+        container
+        d-flex
+        flex-column
+        justify-content-center
+        align-items-center
+        my-auto
+      "
+      style="border: 2px solid black"
+    >
+      <span class="display-5 text-center m-2">City Name: <%= data.name %></span>
+      <span class="display-5 text-center m-2"
+        >Temperature: <%= data.main.temp %> <sup>°C</sup>
+        <!-- <img
+          src="http://openweathermap.org/img/wn/<%= data.weather[0].icon %>@2x.png"
+          alt="weather-icon"
+          class=""
+        /> -->
+      </span>
+      <span class="display-5 text-center m-2">
+        Description: <%= data.weather[0].description %>
+        <img
+          src="http://openweathermap.org/img/wn/<%= data.weather[0].icon %>@2x.png"
+          alt="weather-icon"
+          class=""
+        />
+      </span>
+      <span class="display-6">
+        <a
+          href="/"
+          class="text-decoration-none text-dark"
+          data-bs-toggle="tooltip"
+          data-bs-placement="top"
+          title="Back to home"
+        >
+          <i class="fas fa-home"></i>Home</a
+        >
+      </span>
     </div>
+    <%- include("footer.ejs") %>
   </body>
 </html>
