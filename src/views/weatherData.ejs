@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("bootstrap.ejs") %>
+  <title>Weather of: <%= data.name %></title>
+  <!-- <link href="../public/style.css" rel="stylesheet" type="text/css" /> -->
+  <body class="d-flex flex-column">
+    <div class="container">
+      <p class="display-3">City Name: <%= data.name %></p>
+      <p class="display-3">temp: <%= data.main.temp %></p>
+      <p class="display4 lead">des: <%= data.weather[0].description %></p>
+      <div class="container">
+        <img
+          src="http://openweathermap.org/img/wn/<%= data.weather[0].icon %>@2x.png"
+          alt="weather-icon"
+          class="bg-danger"
+        />
+      </div>
+      <p class="display-4">wind <%= data.wind.speed%></p>
+      <a href="/">home</a>
+    </div>
+  </body>
+</html>
