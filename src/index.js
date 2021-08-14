@@ -12,9 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get("/", (req, res) => {
   res.render("home.ejs");
 });
-app.get("/about", (req, res) => {
-  res.send("hello about");
-});
+
 app.post("/weather", (req, res) => {
   const cityName = req.body.name;
   const weather = async () => {
@@ -28,6 +26,6 @@ app.post("/weather", (req, res) => {
   // res.redirect("/");
   weather();
 });
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log("SERVER IS ON");
 });
