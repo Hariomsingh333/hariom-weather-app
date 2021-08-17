@@ -19,12 +19,18 @@ app.post("/weather", (req, res) => {
     );
     const data = await Post.json();
     res.render("weatherData.ejs", { data });
+    res.send("hoo you got wrong way");
   };
 
   weather();
 });
 app.get("*", (req, res) => {
   res.render("err.ejs");
+});
+// express error handling
+
+app.use((err, req, res, next) => {
+  res.send("your input is empty");
 });
 app.listen(process.env.PORT || 3000, () => {
   console.log("SERVER IS ON");

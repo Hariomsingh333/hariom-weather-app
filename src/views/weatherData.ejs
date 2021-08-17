@@ -8,10 +8,22 @@
     integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
     crossorigin="anonymous"
   />
+  <link rel="icon" href="./favicon.ico" />
 
   <title>Weather of: <%= data.name %></title>
   <!-- <link href="../public/style.css" rel="stylesheet" type="text/css" /> -->
-  <body class="d-flex flex-column" style="width: 100%; min-height: 100vh">
+  <body
+    class="d-flex flex-column"
+    style="
+      width: 100%;
+      min-height: 100vh;
+      background: linear-gradient(
+        45deg,
+        rgb(119, 223, 71),
+        rgba(231, 229, 117, 0.981)
+      );
+    "
+  >
     <!-- <div class="container">
       <p class="display-3">City Name: <%= data.name %></p>
       <p class="display-3">temp: <%= data.main.temp %></p>
